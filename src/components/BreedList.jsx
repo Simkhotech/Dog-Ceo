@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Panel from 'react-bootstrap/lib/Panel';
-import Col from 'react-bootstrap/lib/Col';
 
 import Alert from './Alert';
 
@@ -17,7 +16,7 @@ export default class BreedList extends React.Component {
       hasError,
       message,
     } = this.props;
-    const title = 'Выберите породу...';
+    const title = 'Choose a breed of dog...';
 
     function getDogPageUrl(selected) {
       return `/dog/${selected.breed}${selected.subBreed ? `/${selected.subBreed}` : ''}`;
