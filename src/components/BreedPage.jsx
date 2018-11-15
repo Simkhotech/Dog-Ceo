@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Thumbnail from 'react-bootstrap/lib/Thumbnail';
+import Image from 'react-bootstrap/lib/Image';
 import Button from 'react-bootstrap/lib/Button';
-import Col from 'react-bootstrap/lib/Col';
 
 import Alert from './Alert';
+import LoadingSpinner from './LoadingSpinner';
 
 export default class BreedPage extends React.Component {
   componentDidMount() {
@@ -20,37 +20,29 @@ export default class BreedPage extends React.Component {
       hasError,
       message,
     } = this.props;
+
     const {
       breed,
       subBreed,
     } = this.props.match.params;
 
-    const title = `Nice dog - ${label}`;
-    const description = 'Dog lowers uploaded pictures of different sizes, so this block jumps in size. But it is not problem. We can fix it later (if needed)';
-
-    if (hasError) {
-      return (<Alert message={message} />);
-    }
+    if (hasError === null) return (<LoadingSpinner />);
+    if (hasError) return (<Alert message={message} />);
 
     return (
-      <Col xs={6} md={4}>
-
-        <Thumbnail
-          src={image}
-          alt="dog pic"
+      <React.Fragment>
+        <Button
+          ref={(button) => { this.button = button; }}
+          bsStyle="primary"
+          onClick={() => getBreedRandomImage(breed, subBreed)}
         >
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <p>
-            <Button
-              bsStyle="primary"
-              onClick={() => getBreedRandomImage(breed, subBreed)}
-            >
-              Get other picture
-            </Button>
-          </p>
-        </Thumbnail>
-      </Col>
+          <h3>{label.toUpperCase()}</h3>
+          <Image
+            src={image}
+            thumbnail
+          />
+        </Button>
+      </React.Fragment>
     );
   }
 }
