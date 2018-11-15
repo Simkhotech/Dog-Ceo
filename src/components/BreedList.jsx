@@ -28,27 +28,23 @@ export default class BreedList extends React.Component {
     }
 
     return (
-      <Col xs={6} md={4}>
+      <Panel>
+        <Panel.Heading>
+          <Panel.Title componentClass="h3">{title}</Panel.Title>
+        </Panel.Heading>
+        <Panel.Body>
 
-        <Panel>
-          <Panel.Heading>
-            <Panel.Title componentClass="h3">{title}</Panel.Title>
-          </Panel.Heading>
-          <Panel.Body>
+          <Typeahead
+            onChange={(selected) => {
+              if (selected.length > 0) {
+                window.location = getDogPageUrl(selected[0]);
+              }
+            }}
+            options={breedList}
+          />
 
-            <Typeahead
-              onChange={(selected) => {
-                if (selected.length > 0) {
-                  window.location = getDogPageUrl(selected[0]);
-                }
-              }}
-              options={breedList}
-            />
-
-          </Panel.Body>
-        </Panel>
-
-      </Col>
+        </Panel.Body>
+      </Panel>
     );
   }
 }
