@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/lib/Image';
 import Button from 'react-bootstrap/lib/Button';
 
-import Alert from './Alert';
 import LoadingSpinner from './LoadingSpinner';
+import Page404 from './Page404/Page404';
 
 export default class BreedPage extends React.Component {
   componentDidMount() {
@@ -27,7 +27,7 @@ export default class BreedPage extends React.Component {
     } = this.props.match.params;
 
     if (hasError === null) return (<LoadingSpinner />);
-    if (hasError) return (<Alert message={message} />);
+    if (hasError) return (<Page404 message={message} />);
 
     return (
       <React.Fragment>

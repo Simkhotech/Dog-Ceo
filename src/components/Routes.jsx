@@ -7,4 +7,4 @@ export const BreedList = loadable(() => import('../containers/BreedList'), {
 export const BreedPage = loadable(() => import('../containers/BreedPage'), {
   LoadingComponent: LoadingSpinner,
 });
-export const PageNotFound = loadable(() => import('./PageNotFound'));
+export const PageNotFound = loadable(() => import('./Page404/Page404'));
