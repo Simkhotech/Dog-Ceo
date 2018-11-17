@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Panel from 'react-bootstrap/lib/Panel';
 
-import Alert from './Alert';
+import Alert from '../Alert';
 
-export default class BreedList extends React.Component {
+export default class BreedListPage extends React.Component {
   componentDidMount() {
     this.props.getBreedList();
   }
@@ -48,14 +48,14 @@ export default class BreedList extends React.Component {
   }
 }
 
-BreedList.propTypes = {
+BreedListPage.propTypes = {
   getBreedList: PropTypes.func.isRequired,
   breedList: PropTypes.arrayOf(PropTypes.object).isRequired,
   hasError: PropTypes.bool,
   message: PropTypes.string,
 };
 
-BreedList.defaultProps = {
+BreedListPage.defaultProps = {
   hasError: false,
   message: null,
 };

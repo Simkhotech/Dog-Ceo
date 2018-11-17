@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import getBreedList from '../actions/breedList';
-import BreedList from '../components/BreedList';
+import BreedListPage from '../components/BreedListPage/BreedListPage';
 
 const mapStateToProps = state => ({
   breedList: state.breedList.breedList.breedList,
@@ -13,4 +13,4 @@ const mapDispatchToProps = { getBreedList };
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(BreedList);
+)(BreedListPage);
