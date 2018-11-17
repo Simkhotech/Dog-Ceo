@@ -1,5 +1,5 @@
 import loadable from 'loadable-components';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 
 export const BreedList = loadable(() => import('../containers/BreedListPageContainer'), {
   LoadingComponent: LoadingSpinner,
