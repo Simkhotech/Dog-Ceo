@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import PropTypes from 'prop-types';
-import Alert from '../Alert';
+import Alert from '../Alert/Alert';
 
 const Page404 = ({ type, head, message }) => (
   <React.Fragment>

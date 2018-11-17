@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Panel from 'react-bootstrap/lib/Panel';
 
-import Alert from '../Alert';
+import Alert from '../Alert/Alert';
 
 export default class BreedListPage extends React.Component {
   componentDidMount() {
