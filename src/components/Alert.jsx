@@ -2,18 +2,9 @@ import React from 'react';
 import BooAlert from 'react-bootstrap/lib/Alert';
 import PropTypes from 'prop-types';
 
-import Button from 'react-bootstrap/lib/Button';
-
 const Alert = ({ type, head, message }) => (
   <BooAlert bsStyle={type}>
     <strong>{head}</strong> {message}
-    <br />
-    <Button
-      bsStyle="primary"
-      href="/"
-    >
-        Homepage
-    </Button>
   </BooAlert>
 );
 
