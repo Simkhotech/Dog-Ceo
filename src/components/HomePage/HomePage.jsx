@@ -4,15 +4,14 @@ import { Provider } from 'react-redux';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Col from 'react-bootstrap/lib/Col';
 
+import * as Routes from '../Routes';
 
-import * as Routes from './Routes';
 
-
-import configureStore from '../store';
+import configureStore from '../../store';
 
 const store = configureStore();
 
-const App = () => (
+const HomePage = () => (
   <Provider store={store}>
     <React.Fragment>
       <Navbar>
@@ -35,4 +34,4 @@ const App = () => (
     </React.Fragment>
   </Provider>
 );
-export default App;
+export default HomePage;
