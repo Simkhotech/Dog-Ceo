@@ -16,8 +16,8 @@ const Page404 = ({ type, head, message }) => (
 );
 
 Page404.propTypes = {
-  type: 'info',
-  head: '404',
+  type: PropTypes.string,
+  head: PropTypes.string,
   message: PropTypes.string,
 };
 
